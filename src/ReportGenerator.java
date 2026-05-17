@@ -1,5 +1,4 @@
-
-import java.util.*;
+import java.util.List;
 
 public class ReportGenerator {
 
@@ -12,7 +11,7 @@ public class ReportGenerator {
         }
 
         for (Student s : students) {
-            System.out.println(s.getId() + " - " + s.getName() + " - " + s.getMajor() + " - GPA: " + s.getGpa());
+            System.out.println(s.getId() + " - " + s.getName() + " - " + s.getDepartment() + " - GPA: " + s.getGpa() + " - Year: " + s.getYear());
         }
     }
 }

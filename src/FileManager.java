@@ -8,15 +8,15 @@ public class FileManager {
             BufferedWriter writer = new BufferedWriter(new FileWriter("students.txt"));
 
             for (Student s : students) {
-                writer.write(s.getId() + "," + s.getName() + "," + s.getGpa() + "," + s.getMajor());
+                writer.write(s.getName() + "," + s.getId() + "," + s.getAge() + "," + s.getDepartment() + "," + s.getGpa() + "," + s.getYear());
                 writer.newLine();
             }
 
             writer.close();
-            System.out.println(" Data saved!");
+            System.out.println("✅ Data saved!");
 
         } catch (IOException e) {
-            System.out.println(" Error saving file!");
+            System.out.println("❌ Error saving file!");
         }
     }
 
@@ -30,21 +30,25 @@ public class FileManager {
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
 
-                if (data.length == 4) {
-                    int id = Integer.parseInt(data[0].trim());
-                    String name = data[1].trim();
-                    double gpa = Double.parseDouble(data[2].trim());
-                    String major = data[3].trim();
+                if (data.length == 6) {
+                    String name = data[0].trim();
+                    String id = data[1].trim();
+                    int age = Integer.parseInt(data[2].trim());
+                    
+                    Department dept = new Department(data[3].trim()); 
+                    
+                    double gpa = Double.parseDouble(data[4].trim());
+                    int year = Integer.parseInt(data[5].trim());
 
-                    students.add(new Student(id, name, gpa, major));
+                    students.add(new Student(name, id, age, dept, gpa, year));
                 }
             }
             reader.close();
 
         } catch (IOException e) {
-            System.out.println(" No file found, starting fresh.");
+            System.out.println("⚠️ No file found, starting fresh.");
         } catch (NumberFormatException e) {
-            System.out.println(" Error parsing student data!");
+            System.out.println("❌ Error parsing student data!");
         }
 
         return students;
