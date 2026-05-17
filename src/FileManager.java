@@ -1,11 +1,8 @@
-package srms;
-
 import java.io.*;
 import java.util.*;
 
 public class FileManager {
 
-    
     public static void saveToFile(List<Student> students) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("students.txt"));
@@ -16,14 +13,13 @@ public class FileManager {
             }
 
             writer.close();
-            System.out.println("✅ Data saved!");
+            System.out.println(" Data saved!");
 
         } catch (IOException e) {
-            System.out.println("❌ Error saving file!");
+            System.out.println(" Error saving file!");
         }
     }
 
-    
     public static List<Student> loadFromFile() {
         List<Student> students = new ArrayList<>();
 
@@ -33,26 +29,22 @@ public class FileManager {
 
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
-                
-                
+
                 if (data.length == 4) {
-                    
                     int id = Integer.parseInt(data[0].trim());
                     String name = data[1].trim();
                     double gpa = Double.parseDouble(data[2].trim());
                     String major = data[3].trim();
-                    
-                    
+
                     students.add(new Student(id, name, gpa, major));
                 }
             }
-
             reader.close();
 
         } catch (IOException e) {
-            System.out.println("⚠️ No file found, starting fresh.");
+            System.out.println(" No file found, starting fresh.");
         } catch (NumberFormatException e) {
-            System.out.println("❌ Error parsing student data!");
+            System.out.println(" Error parsing student data!");
         }
 
         return students;
