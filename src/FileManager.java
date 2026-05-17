@@ -13,10 +13,10 @@ public class FileManager {
             }
 
             writer.close();
-            System.out.println("✅ Data saved!");
+            System.out.println(" Data saved!");
 
         } catch (IOException e) {
-            System.out.println("❌ Error saving file!");
+            System.out.println(" Error saving file!");
         }
     }
 
@@ -35,7 +35,8 @@ public class FileManager {
                     String id = data[1].trim();
                     int age = Integer.parseInt(data[2].trim());
                     
-                    Department dept = new Department(data[3].trim()); 
+                    
+                    Department dept = new Department(data[3].trim(), ""); 
                     
                     double gpa = Double.parseDouble(data[4].trim());
                     int year = Integer.parseInt(data[5].trim());
@@ -46,9 +47,9 @@ public class FileManager {
             reader.close();
 
         } catch (IOException e) {
-            System.out.println("⚠️ No file found, starting fresh.");
+            System.out.println(" No file found, starting fresh.");
         } catch (NumberFormatException e) {
-            System.out.println("❌ Error parsing student data!");
+            System.out.println(" Error parsing student data!");
         }
 
         return students;
