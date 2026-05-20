@@ -1,4 +1,4 @@
-public class Main {
+    public class Main {
 
     public static void main(String[] args) {
 
@@ -7,16 +7,16 @@ public class Main {
         System.out.println("                Team Project - Part 1");
         System.out.println("==============================================\n");
 
-
+        
         Department cs = new Department("Computer Science", "CS");
         Department it = new Department("Information Technology", "IT");
 
+        
+        Student s1 = new Student("Roya", "2023001",21,it, 4.75,3);
+        Student s2 = new Student("remaz", "2023002",21,cs, 4.50,3 );
+        Student s3 = new Student("rawan", "2023003",20,it, 4.20 ,3);
 
-        Student s1 = new Student("Roya", "2023001", 4.75, cs);
-        Student s2 = new Student("Sara", "2023002", 4.50, it);
-        Student s3 = new Student("Lama", "2023003", 4.20, cs);
-
-
+        
         RecordManager manager = new RecordManager();
 
         System.out.println(">>> Adding Students...");
@@ -47,4 +47,3 @@ public class Main {
         System.out.println("==============================================");
     }
 }
-
