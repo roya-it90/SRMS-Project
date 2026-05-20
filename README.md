@@ -1,4 +1,4 @@
-# SRMS – Student Record Management System (Part 1)
+# SRMS – Student Record Management System 
 
 This repository contains Part 1 of the Student Record Management System (SRMS).  
 It represents the contribution of one team member responsible for developing the core backend structure using Java and Object-Oriented Programming (OOP).  
