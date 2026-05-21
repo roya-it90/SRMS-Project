@@ -4,7 +4,7 @@
 
         System.out.println("==============================================");
         System.out.println("     SRMS - Student Record Management System");
-        System.out.println("                Team Project - Part 1");
+        System.out.println("                Team Project ");
         System.out.println("==============================================\n");
 
         
@@ -42,8 +42,10 @@
         manager.listStudents();
 
         System.out.println("\n==============================================");
-        System.out.println("     End of Part 1 - Backend Functionality");
-        System.out.println("     Next: GUI, Database, and Full System");
+        System.out.println("     Next: Menu");
         System.out.println("==============================================");
+        
+
+        Menu.showMenu(manager);
     }
 }
