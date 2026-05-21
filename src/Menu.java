@@ -90,8 +90,8 @@ public class Menu {
 
                 case 5:
 
-                    ReportThread report =
-                        new ReportThread(manager.getStudents());
+                    AutoSaveThread report =
+                        new AutoSaveThread(manager.getStudents());
 
                     report.start();
 
