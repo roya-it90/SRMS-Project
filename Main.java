@@ -36,7 +36,7 @@
         }
 
         System.out.println("\n>>> Deleting Student with ID 2023003...");
-        manager.deleteStudent("2023003");
+        manager.removeStudent("2023003");
 
         System.out.println("\n>>> Listing Students After Deletion:");
         manager.listStudents();
